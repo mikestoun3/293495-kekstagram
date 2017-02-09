@@ -49,14 +49,12 @@ wizardCoat.addEventListener('click', function () {
 
 
 wizardEyes.addEventListener('click', function () {
-  var colorNum;
-  colorNum = Math.floor(Math.random() * wizardEyesColors.length);
+  var colorNum = Math.floor(Math.random() * wizardEyesColors.length);
   wizardEyes.style.fill = wizardCoatColors [colorNum];
 });
 
 fireballColor.addEventListener('click', function () {
-  var colorNum;
-  colorNum = Math.floor(Math.random() * fireballColors.length);
+  var colorNum = Math.floor(Math.random() * fireballColors.length);
   fireballColor.style.background = fireballColors [colorNum];
 });
 
