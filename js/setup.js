@@ -5,17 +5,17 @@ var offInvisible = document.querySelector('.setup-open');
 var onInvisible = document.querySelector('.setup-close');
 var setup = document.querySelector('.setup');
 
-offInvisible.addEventListener ('click', function(){
+offInvisible.addEventListener('click', function () {
   setup.classList.remove('invisible');
 });
-onInvisible.addEventListener ('click', function(){
+onInvisible.addEventListener('click', function () {
   setup.classList.add('invisible');
 });
 
 // стилизация пендальфа
 
 var wizard = document.querySelector('#wizard');
-var wizardCoat=wizard.querySelector('#wizard-coat');
+var wizardCoat = wizard.querySelector('#wizard-coat');
 var wizardEyes = wizard.querySelector('#wizard-eyes');
 var fireballColor = document.querySelector('.setup-fireball-wrap');
 var wizardCoatColors = [
@@ -42,20 +42,19 @@ var fireballColors = [
 ];
 
 
-wizardCoat.addEventListener('click', function() {
-  var colorNum;
-  colorNum = Math.floor(Math.random() * wizardCoatColors.length);
+wizardCoat.addEventListener('click', function () {
+  var colorNum = Math.floor(Math.random() * wizardCoatColors.length);
   wizardCoat.style.fill = wizardCoatColors [colorNum];
 });
 
 
-wizardEyes.addEventListener('click', function() {
+wizardEyes.addEventListener('click', function () {
   var colorNum;
   colorNum = Math.floor(Math.random() * wizardEyesColors.length);
   wizardEyes.style.fill = wizardCoatColors [colorNum];
 });
 
-fireballColor.addEventListener('click', function() {
+fireballColor.addEventListener('click', function () {
   var colorNum;
   colorNum = Math.floor(Math.random() * fireballColors.length);
   fireballColor.style.background = fireballColors [colorNum];
