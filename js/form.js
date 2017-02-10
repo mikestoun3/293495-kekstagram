@@ -16,35 +16,34 @@ var previewSizeInc = overlay.querySelector('.upload-resize-controls-button-inc')
 var resizeValue = overlay.querySelector('.upload-resize-controls-value');
 var resizePercent = 100;
 
-uploadPhoto.addEventListener('change', function(){
+uploadPhoto.addEventListener('change', function () {
   overlay.classList.remove('invisible');
-  uploadButton.classList.add('invisible')
+  uploadButton.classList.add('invisible');
+});
 
-  });
-
-cancelOverlay.addEventListener('click', function(){
+cancelOverlay.addEventListener('click', function () {
   overlay.classList.add('invisible');
-  uploadButton.classList.remove('invisible')
+  uploadButton.classList.remove('invisible');
 });
 
 
-originalFilter.addEventListener('click',function(){
-  filtersPreview.className = 'filter-image-preview'
+originalFilter.addEventListener('click', function () {
+  filtersPreview.className = 'filter-image-preview';
 });
-chromeFilter.addEventListener('click',function(){
-  filtersPreview.className = 'filter-image-preview filter-chrome'
+chromeFilter.addEventListener('click', function () {
+  filtersPreview.className = 'filter-image-preview filter-chrome';
 });
-sepiaFilter.addEventListener('click',function(){
-  filtersPreview.className = 'filter-image-preview filter-sepia'
+sepiaFilter.addEventListener('click', function () {
+  filtersPreview.className = 'filter-image-preview filter-sepia';
 });
-marvinFilter.addEventListener('click',function(){
-  filtersPreview.className = 'filter-image-preview filter-marvin'
+marvinFilter.addEventListener('click', function () {
+  filtersPreview.className = 'filter-image-preview filter-marvin';
 });
-phobosFilter.addEventListener('click',function(){
-  filtersPreview.className = 'filter-image-preview filter-phobos'
+phobosFilter.addEventListener('click', function () {
+  filtersPreview.className = 'filter-image-preview filter-phobos';
 });
-heatFilter.addEventListener('click',function(){
-  filtersPreview.className = 'filter-image-preview filter-heat'
+heatFilter.addEventListener('click', function () {
+  filtersPreview.className = 'filter-image-preview filter-heat';
 });
 
 previewSizeDec.addEventListener('click', setDecValue);
