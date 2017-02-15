@@ -24,11 +24,7 @@ git push
 ¹ В `academy` должна быть ссылка на репозиторий Академии. Если его там нет, добавьте:
 
 ```
-<<<<<<< HEAD
 git remote add academy git@github.com:htmlacademy-javascript/293495-kekstagram.git
-=======
-git remote add academy git@github.com:htmlacademy-javascript/293495-code-and-magick.git
->>>>>>> db6186e7b7bfcb02bab2454af3debcfef5aecdc1
 ```
 
 Когда вы обновили `master`, создайте ветку для нового задания:
