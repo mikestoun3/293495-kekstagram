@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "293495-kekstagram",
   "version": "0.1.0",
   "private": true,
@@ -20,6 +21,28 @@
   "dependencies": {},
   "scripts": {
     "test": "esint js/"
+=======
+  "name": "Code-and-Magic",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Учебный проект «Код и Магия» от HTML Academy",
+  "author": "Денис Архипов",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:htmlacademy-javascript/293495-code-and-magick.git"
+  },
+  "bugs": {
+    "url": "https://github.com/htmlacademy-javascript/293495-code-and-magick/issues"
+  },
+  "homepage": "https://github.com/htmlacademy-javascript/293495-code-and-magick",
+  "devDependencies": {
+    "eslint": "3.9.0",
+    "eslint-config-htmlacademy": "0.2.x"
+  },
+  "dependencies": {},
+  "scripts": {
+    "test": "eslint js/"
+>>>>>>> db6186e7b7bfcb02bab2454af3debcfef5aecdc1
   },
   "engines": {
     "node": "^6.9"

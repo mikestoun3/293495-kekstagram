@@ -33,10 +33,17 @@
 И клонируйте репозиторий на свой компьютер, выполнив в консоли:
 
 ```bash
+<<<<<<< HEAD
 git clone git@github.com:htmlacademy-javascript/kekstagram.git
 ```
 
 Адрес в команде нужно заменить на тот, что вы скопировали. Теперь в папке `kekstagram` лежит ваш проект.
+=======
+git clone git@github.com:htmlacademy-javascript/code-and-magick.git
+```
+
+Адрес в команде нужно заменить на тот, что вы скопировали. Теперь в папке `code-and-magick` лежит ваш проект.
+>>>>>>> db6186e7b7bfcb02bab2454af3debcfef5aecdc1
 
 ### 4. Свяжите проект с репозиторием Академии
 
@@ -44,10 +51,17 @@ git clone git@github.com:htmlacademy-javascript/kekstagram.git
 
 ```bash
 # Зайдите в папку вашего проекта
+<<<<<<< HEAD
 cd kekstagram
 
 # Привяжите к ней репозиторий Академии
 git remote add academy git@github.com:htmlacademy-javascript/293495-kekstagram.git
+=======
+cd code-and-magick
+
+# Привяжите к ней репозиторий Академии
+git remote add academy git@github.com:htmlacademy-javascript/293495-code-and-magick.git
+>>>>>>> db6186e7b7bfcb02bab2454af3debcfef5aecdc1
 ```
 
 ### 5. Настройте SSH-ключи
