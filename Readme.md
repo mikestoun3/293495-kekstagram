@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Денис Архипов](https://up.htmlacademy.ru/javascript/8/user/293495).
-* Наставник: `Неизвестно`.
+* Наставник: [Роман Чаругин](https://htmlacademy.ru/profile/id345379).
 
 ---
 

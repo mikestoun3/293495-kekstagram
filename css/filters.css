@@ -1,3 +1,4 @@
+
 .upload-filter-label-phobos .upload-filter-preview,
 .filter-phobos {
   -webkit-filter: invert(40%) saturate(10);
@@ -7,4 +8,5 @@
 .filter-heat {
   -webkit-filter: saturate(10);
           filter: saturate(10);
+
 }

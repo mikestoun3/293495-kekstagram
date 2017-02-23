@@ -4,6 +4,7 @@ var uploadPhoto = document.querySelector('#upload-file');
 var overlay = document.querySelector('.upload-overlay');
 var uploadButton = document.querySelector('#upload-select-image');
 var cancelOverlay = document.querySelector('.upload-form-cancel');
+
 var filtersPreview = overlay.querySelector('.filter-image-preview');
 var originalFilter = overlay.querySelector('.upload-filter-label');
 var chromeFilter = overlay.querySelector('.upload-filter-label-chrome');
@@ -14,9 +15,9 @@ var heatFilter = overlay.querySelector('.upload-filter-label-heat');
 var previewSizeDec = overlay.querySelector('.upload-resize-controls-button-dec');
 var previewSizeInc = overlay.querySelector('.upload-resize-controls-button-inc');
 var resizeValue = overlay.querySelector('.upload-resize-controls-value');
+
 var filtersGroup = overlay.querySelector('.upload-filter-controls');
 var resizePercent = 100;
-
 
 uploadPhoto.addEventListener('change', function () {
   overlay.classList.remove('invisible');
@@ -79,3 +80,4 @@ filtersGroup.addEventListener('click', function () {
   }
   toggleFilterAriaPressed();
 }, false);
+
