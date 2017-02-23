@@ -47,13 +47,13 @@ function resizeImage() {
 }
 
 
-var toggleFilterAriaPressed = function () {
+toggleFilterAriaPressed = function () {
   var inputs = document.getElementsByName('upload-filter');
   for (var i = 0; i < inputs.length; i++) {
     inputs[i].setAttribute('aria-pressed', inputs[i].checked);
   }
 };
-var toggleAriaHidden = function (element) {
+toggleAriaHidden = function (element) {
   if (element.getAttribute('aria-hidden') === 'true') {
     element.setAttribute('aria-hidden', false);
   } else {
