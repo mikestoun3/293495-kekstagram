@@ -10,6 +10,7 @@ var previewSizeInc = overlay.querySelector('.upload-resize-controls-button-inc')
 var resizeValue = overlay.querySelector('.upload-resize-controls-value');
 var filtersGroup = overlay.querySelector('.upload-filter-controls');
 var resizePercent = 100;
+var toggleAriaHidden;
 
 uploadPhoto.addEventListener('change', function () {
   overlay.classList.remove('invisible');
@@ -53,13 +54,13 @@ var toggleFilterAriaPressed = function () {
     inputs[i].setAttribute('aria-pressed', inputs[i].checked);
   }
 };
-var toggleAriaHidden = function (element) {
+function toggleAriaHidden (element) {
   if (element.getAttribute('aria-hidden') === 'true') {
     element.setAttribute('aria-hidden', false);
   } else {
     element.setAttribute('aria-hidden', true);
   }
-  toogleAriaHidden();
+  toggleAriaHidden();
 };
 filtersGroup.addEventListener('click', function () {
   var target = event.target;
