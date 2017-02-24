@@ -1,72 +1,131 @@
 'use strict';
 
-var uploadPhoto = document.querySelector('#upload-file');
-var overlay = document.querySelector('.upload-overlay');
 var uploadButton = document.querySelector('#upload-select-image');
-var cancelOverlay = document.querySelector('.upload-form-cancel');
-var filtersPreview = overlay.querySelector('.upload-form-preview');
-var originalFilter = overlay.querySelector('.upload-filter-label');
-var chromeFilter = overlay.querySelector('.upload-filter-label-chrome');
-var sepiaFilter = overlay.querySelector('.upload-filter-label-sepia');
-var marvinFilter = overlay.querySelector('.upload-filter-label-marvin');
-var phobosFilter = overlay.querySelector('.upload-filter-label-phobos');
-var heatFilter = overlay.querySelector('.upload-filter-label-heat');
-var previewSizeDec = overlay.querySelector('.upload-resize-controls-button-dec');
-var previewSizeInc = overlay.querySelector('.upload-resize-controls-button-inc');
-var resizeValue = overlay.querySelector('.upload-resize-controls-value');
-var resizePercent = 100;
+var uploadFile = uploadButton.querySelector('#upload-file');
+var Overlay = document.querySelector('.upload-overlay');
+var uploadFormCancel = document.querySelector('.upload-form-cancel');
+var previewSizeDec = document.querySelector('.upload-resize-controls-button-dec');
+var previewSizeIn = document.querySelector('.upload-resize-controls-button-inc');
+var controlValue = document.querySelector('.upload-resize-controls-value');
+var preview = document.querySelector('.filter-image-preview');
+var uploadFilterControls = document.querySelector('.upload-filter-controls');
 
-uploadPhoto.addEventListener('change', function () {
-  overlay.classList.remove('invisible');
+var ENTER_KEY_CODE = 13;
+var ESCAPE_KEY_CODE = 27;
+
+var isActivateEvent = function (evt) {
+  return evt.keyCode === ENTER_KEY_CODE;
+};
+
+var setupKeydownHandler = function (evt) {
+  if (evt.keyCode === ESCAPE_KEY_CODE) {
+    closeUploadOverlayElement();
+  }
+};
+
+var showUploadOverlayElement = function () {
+  Overlay.classList.remove('invisible');
   uploadButton.classList.add('invisible');
-});
+  toggleAriaHidden(Overlay);
 
-cancelOverlay.addEventListener('click', function () {
-  overlay.classList.add('invisible');
+  document.addEventListener('keydown', setupKeydownHandler);
+};
+
+var closeUploadOverlayElement = function () {
+  Overlay.classList.add('invisible');
   uploadButton.classList.remove('invisible');
-});
+  toggleAriaHidden(Overlay);
 
+  document.removeEventListener('keydown', setupKeydownHandler);
+};
 
-originalFilter.addEventListener('click', function () {
-  filtersPreview.className = 'filter-image-preview';
-});
-chromeFilter.addEventListener('click', function () {
-  filtersPreview.className = 'filter-image-preview filter-chrome';
-});
-sepiaFilter.addEventListener('click', function () {
-  filtersPreview.className = 'filter-image-preview filter-sepia';
-});
-marvinFilter.addEventListener('click', function () {
-  filtersPreview.className = 'filter-image-preview filter-marvin';
-});
-phobosFilter.addEventListener('click', function () {
-  filtersPreview.className = 'filter-image-preview filter-phobos';
-});
-heatFilter.addEventListener('click', function () {
-  filtersPreview.className = 'filter-image-preview filter-heat';
-});
-
-previewSizeDec.addEventListener('click', setDecValue);
-previewSizeInc.addEventListener('click', setIncValue);
-
-function setDecValue() {
-  if (resizePercent === 25) {
-    return;
+var toggleFilterAriaPressed = function () {
+  var inputs = document.getElementsByName('upload-filter');
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].setAttribute('aria-pressed', inputs[i].checked);
   }
-  resizePercent -= 25;
-  resizeValue.value = resizePercent + '%';
-  resizeImage();
-}
+};
 
-function setIncValue() {
-  if (resizePercent === 100) {
-    return;
+
+var toggleAriaHidden = function (element) {
+  if (element.getAttribute('aria-hidden') === 'true') {
+    element.setAttribute('aria-hidden', false);
+  } else {
+    element.setAttribute('aria-hidden', true);
   }
-  resizePercent += 25;
-  resizeValue.value = resizePercent + '%';
-  resizeImage();
-}
+};
 
-function resizeImage() {
-  filtersPreview.style.transform = 'scale(' + resizePercent / 100 + ')';
-}
+uploadFile.addEventListener('change', function () {
+  showUploadOverlayElement();
+});
+
+uploadFormCancel.addEventListener('click', function () {
+  closeUploadOverlayElement();
+});
+
+uploadFilterControls.addEventListener('click', function () {
+  var target = event.target;
+  if (target.tagName.toLowerCase() !== 'input') {
+    return;
+  } else {
+    preview.className = 'filter-image-preview';
+    preview.classList.add('filter-' + target.value);
+  }
+  toggleFilterAriaPressed();
+}, false);
+
+uploadFilterControls.addEventListener('keydown', function (evt) {
+  if (isActivateEvent(evt)) {
+    if (event.target.tagName.toLowerCase() === 'label') {
+      preview.className = 'filter-image-preview';
+      var labelFor = event.target.getAttribute('for');
+      var input = document.getElementById(labelFor);
+      input.checked = true;
+      preview.classList.add('filter-' + input.value);
+      toggleFilterAriaPressed();
+    }
+  }
+}, true);
+
+
+var decValue = function (valueControl, min, n) {
+  if (valueControl > min) {
+    return (valueControl - n);
+  } else {
+    return valueControl;
+  }
+};
+
+var incValue = function (valueControl, max, n) {
+  if (valueControl < max) {
+    return (valueControl + n);
+  } else {
+    return valueControl;
+  }
+};
+
+previewSizeDec.addEventListener('click', function () {
+  var value = decValue(parseInt(controlValue.value, 10), 25, 25);
+  if (value === 25) {
+    previewSizeDec.disabled = true;
+    previewSizeIn.disabled = false;
+  } else {
+    previewSizeDec.disabled = false;
+    previewSizeIn.disabled = false;
+  }
+  controlValue.value = value + '%';
+  preview.style.transform = 'scale(' + value / 100 + ')';
+});
+
+previewSizeIn.addEventListener('click', function () {
+  var value = incValue(parseInt(controlValue.value, 10), 100, 25);
+  if (value === 100) {
+    previewSizeIn.disabled = true;
+    previewSizeDec.disabled = false;
+  } else {
+    previewSizeDec.disabled = false;
+    previewSizeIn.disabled = false;
+  }
+  controlValue.value = value + '%';
+  preview.style.transform = 'scale(' + value / 100 + ')';
+});
