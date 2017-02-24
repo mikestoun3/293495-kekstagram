@@ -53,13 +53,14 @@ var toggleFilterAriaPressed = function () {
     inputs[i].setAttribute('aria-pressed', inputs[i].checked);
   }
 };
-function toogleAriaHidden (element) {
+function toogleAriaHidden(element) {
   if (element.getAttribute('aria-hidden') === 'true') {
     element.setAttribute('aria-hidden', false);
   } else {
     element.setAttribute('aria-hidden', true);
   }
-};
+}
+
 filtersGroup.addEventListener('click', function () {
   var target = event.target;
   if (target.tagName.toLowerCase() !== 'input') {
@@ -70,4 +71,4 @@ filtersGroup.addEventListener('click', function () {
   }
   toggleFilterAriaPressed();
 }, false);
-
+toggleFilterAriaPressed();
