@@ -53,7 +53,7 @@ var toggleFilterAriaPressed = function () {
     inputs[i].setAttribute('aria-pressed', inputs[i].checked);
   }
 };
-var toggleAriaHidden = function (element) {
+function toogleAriaHidden (element) {
   if (element.getAttribute('aria-hidden') === 'true') {
     element.setAttribute('aria-hidden', false);
   } else {
