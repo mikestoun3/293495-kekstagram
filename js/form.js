@@ -63,8 +63,6 @@ uploadFormCancel.addEventListener('click', function () {
   closeUploadOverlayElement();
 });
 
-
-
 uploadFilterControls.addEventListener('click', function () {
   var target = event.target;
   if (target.tagName.toLowerCase() !== 'input') {
@@ -88,7 +86,6 @@ uploadFilterControls.addEventListener('keydown', function (evt) {
     }
   }
 }, true);
-
 
 
 var decValue = function (valueControl, min, n) {
