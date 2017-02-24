@@ -16,7 +16,7 @@ var toggleAriaHidden = function (element) {
   } else {
     element.setAttribute('aria-hidden', true);
   }
-  toggleAriaHidden(element)
+  toggleAriaHidden(element);
 };
 
 uploadPhoto.addEventListener('change', function () {
