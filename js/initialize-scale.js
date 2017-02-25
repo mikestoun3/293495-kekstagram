@@ -7,17 +7,18 @@ window.initializeScale = (function () {
 
   return function (controlValue, valueScale, step, callback) {
 
-    var decValue = function (valueControl, min) {
-      if (valueControl > min) {
-        return (valueControl - step);
-      } else {
-        return valueControl;
-      }
-    };
+    
 
     var incValue = function (valueControl, max) {
       if (valueControl < max) {
         return (valueControl + step);
+      } else {
+        return valueControl;
+      }
+    };
+    var decValue = function (valueControl, min) {
+      if (valueControl > min) {
+        return (valueControl - step);
       } else {
         return valueControl;
       }
