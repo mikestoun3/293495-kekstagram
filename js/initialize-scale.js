@@ -44,7 +44,7 @@ window.initializeScale = (function () {
       return valueControl;
     }
   };
-  var controlValue.value = value + '%';
+  var controlValue = value + '%';
   var preview = window.querySelector('.filter-image-preview');
   var value = decValue(parseInt(controlValue.value, 10), 25);
   var scaleTransform = function (scale) {
