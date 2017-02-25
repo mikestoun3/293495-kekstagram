@@ -51,14 +51,17 @@ var scaleTransform = function (scale) {
 var controlValue = value + '%';
 var preview = window.querySelector('.filter-image-preview');
 var value = decValue(parseInt(controlValue.value, 10), 25);
-var scaleTransform = function (scale) {
-  preview.style.transform = 'scale(' + value / 100 + ')';
-};
 var labelFor = event.target.getAttribute('for');
 var input = document.getElementById(labelFor);
 var filterApply = function (preview) {
-  preview.className = 'filter-image-preview';
   preview.classList.add('filter-' + input.value);
+};
+var decValue = function (valueControl, min, n) {
+  if (valueControl > min) {
+    return (valueControl - n);
+  } else {
+    return valueControl;
+  }
 };
 
 var uploadFilterControls = document.querySelector('.upload-filter-controls');

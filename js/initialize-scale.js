@@ -31,13 +31,7 @@ window.initializeScale = (function () {
     });
   };
 });
-var decValue = function (valueControl, min, n) {
-  if (valueControl > min) {
-    return (valueControl - n);
-  } else {
-    return valueControl;
-  }
-};
+
 var incValue = function (valueControl, max, n) {
   if (valueControl < max) {
     return (valueControl + n);
