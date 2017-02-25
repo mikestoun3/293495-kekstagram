@@ -15,8 +15,8 @@ window.initializeFilters = (function () {
       window.utils.toggleFilterAriaPressed();
 
       if (typeof callback === 'function') {
-       callback(newFilter);
-     }
+        callback(newFilter);
+      }
     }, false);
 
     uploadFilterControls.addEventListener('keydown', function (evt) {

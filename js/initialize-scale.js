@@ -38,12 +38,12 @@ window.initializeScale = (function () {
       if (event.target === previewSizeInc) {
         valueScale = incValue(parseInt(controlValue.value, 10), 100);
         if (valueScale === 100) {
-        previewSizeInc.disabled = true;
-        previewSizeDec.disabled = false;
-      } else {
-        previewSizeDec.disabled = false;
-        previewSizeInc.disabled = false;
-      }
+          previewSizeInc.disabled = true;
+          previewSizeDec.disabled = false;
+        } else {
+          previewSizeDec.disabled = false;
+          previewSizeInc.disabled = false;
+        }
       }
       if (typeof callback === 'function') {
         callback(valueScale);

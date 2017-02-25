@@ -15,8 +15,8 @@ window.utils = (function () {
 
   var setupKeydownHandler = function (evt) {
     if (evt.keyCode === ESCAPE_KEY_CODE) {
-        closeUploadOverlayElement();
-      }
+      closeUploadOverlayElement();
+    }
   };
 
   var closeUploadOverlayElement = function () {
