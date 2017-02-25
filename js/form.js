@@ -44,3 +44,6 @@ uploadFile.addEventListener('change', function () {
 uploadFormCancel.addEventListener('click', function () {
   closeUploadOverlayElement();
 });
+
+window.initializeScale(scaleElement, SCALE_STEP, INITIAL_SCALE, scaleTransform);
+window.filterApply(uploadFilterControls, filterApply);

@@ -1,8 +1,6 @@
 'use strict';
 
 window.initializeFilters = (function () {
-  var preview = document.querySelector('.filter-image-preview');
-  var uploadFilterControls = document.querySelector('.upload-filter-controls');
   var ENTER_KEY_CODE = 13;
   return function () {
 
@@ -31,14 +29,18 @@ window.initializeFilters = (function () {
     uploadFilterControls.addEventListener('keydown', function (evt) {
       if (isActivateEvent(evt)) {
         if (event.target.tagName.toLowerCase() === 'label') {
-          preview.className = 'filter-image-preview';
           var labelFor = event.target.getAttribute('for');
           var input = document.getElementById(labelFor);
           input.checked = true;
-          preview.classList.add('filter-' + input.value);
           toggleFilterAriaPressed();
         }
       }
     }, true);
   };
 })();
+var uploadFilterControls = document.querySelector('.upload-filter-controls');
+var preview = document.querySelector('.filter-image-preview');
+var filterApply = function (preview) {
+  preview.className = 'filter-image-preview';
+  preview.classList.add('filter-' + input.value);
+}

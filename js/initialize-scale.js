@@ -32,7 +32,6 @@ window.initializeScale = (function () {
         previewSizeIn.disabled = false;
       }
       controlValue.value = value + '%';
-      preview.style.transform = 'scale(' + value / 100 + ')';
     });
 
     previewSizeIn.addEventListener('click', function () {
@@ -45,8 +44,12 @@ window.initializeScale = (function () {
         previewSizeIn.disabled = false;
       }
       controlValue.value = value + '%';
-      preview.style.transform = 'scale(' + value / 100 + ')';
     });
   };
-
+  var SCALE_STEP = 25;
+  var INITIAL_SCALE = 100;
+  var initializeScale = document.querySelector('.upload-resize-controls');
+  var scaleTransform = function (scale) {
+    preview.style.transform = 'scale(' + value / 100 + ')';
+  }
 })();
