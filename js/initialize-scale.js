@@ -27,27 +27,27 @@ window.initializeScale = (function () {
       if (event.target === previewSizeDec) {
         valueScale = decValue(parseInt(controlValue.value, 10), 25);
         if (valueScale === 25) {
-            previewSizeDec.disabled = true;
-            previewSizeInc.disabled = false;
-      } else {
-            previewSizeDec.disabled = false;
-            previewSizeInc.disabled = false;
-          }
+          previewSizeDec.disabled = true;
+          previewSizeInc.disabled = false;
+        } else {
+          previewSizeDec.disabled = false;
+          previewSizeInc.disabled = false;
+        }
       }
-    
+
       if (event.target === previewSizeInc) {
-      valueScale = incValue(parseInt(controlValue.value, 10), 100);
-      if (valueScale === 100) {
+        valueScale = incValue(parseInt(controlValue.value, 10), 100);
+        if (valueScale === 100) {
         previewSizeInc.disabled = true;
         previewSizeDec.disabled = false;
       } else {
         previewSizeDec.disabled = false;
         previewSizeInc.disabled = false;
       }
-    }
+      }
       if (typeof callback === 'function') {
         callback(valueScale);
-   
+
       }
     }, false);
   };

@@ -14,10 +14,10 @@ window.utils = (function () {
   var previewSizeInc = document.querySelector('.upload-resize-controls-button-inc');
 
   var setupKeydownHandler = function (evt) {
-      if (evt.keyCode === ESCAPE_KEY_CODE) {
-      closeUploadOverlayElement();
-    }
-    };
+    if (evt.keyCode === ESCAPE_KEY_CODE) {
+        closeUploadOverlayElement();
+      }
+  };
 
   var closeUploadOverlayElement = function () {
     overlay.classList.add('invisible');
@@ -56,8 +56,8 @@ window.utils = (function () {
       document.addEventListener('keydown', setupKeydownHandler);
 
       if (typeof callback === 'function') {
-           callback();
-         }
+        callback();
+      }
 
     },
 
