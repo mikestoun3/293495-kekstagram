@@ -22,7 +22,7 @@ window.initializeFilters = (function () {
       var target = event.target;
       if (target.tagName.toLowerCase() !== 'input') {
         return;
-    } 
+      } 
 
       window.utils.toggleFilterAriaPressed();
 
