@@ -12,12 +12,12 @@ window.utils = (function () {
   var preview = document.querySelector('.filter-image-preview');
   var previewSizeDec = document.querySelector('.upload-resize-controls-button-dec');
   var previewSizeInc = document.querySelector('.upload-resize-controls-button-inc');
-  
-    var setupKeydownHandler = function (evt) {
-    if (evt.keyCode === ESCAPE_KEY_CODE) {
+
+  var setupKeydownHandler = function (evt) {
+      if (evt.keyCode === ESCAPE_KEY_CODE) {
       closeUploadOverlayElement();
     }
-  };
+    };
 
   var closeUploadOverlayElement = function () {
     overlay.classList.add('invisible');
@@ -55,9 +55,9 @@ window.utils = (function () {
 
       document.addEventListener('keydown', setupKeydownHandler);
 
-         if (typeof callback === 'function') {
-        callback();
-      }
+      if (typeof callback === 'function') {
+           callback();
+         }
 
     },
 
@@ -71,7 +71,7 @@ window.utils = (function () {
       previewSizeDec.disabled = false;
       previewSizeInc.disabled = true;
     },
-      toggleFilterAriaPressed: toggleFilterAriaPressed,
+    toggleFilterAriaPressed: toggleFilterAriaPressed,
 
     closeUploadOverlayElement: closeUploadOverlayElement,
 

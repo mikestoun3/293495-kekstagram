@@ -14,9 +14,9 @@ window.initializeFilters = (function () {
       }
       window.utils.toggleFilterAriaPressed();
 
-        if (typeof callback === 'function') {
-        callback(newFilter);
-      }
+     if (typeof callback === 'function') {
+          callback(newFilter);
+        }
     }, false);
 
     uploadFilterControls.addEventListener('keydown', function (evt) {
@@ -29,11 +29,11 @@ window.initializeFilters = (function () {
           window.utils.toggleFilterAriaPressed();
         }
       }
-    if (typeof callback === 'function') {
-        callback(newFilter);
-        }
+      if (typeof callback === 'function') {
+      callback(newFilter);
+    }
     }, true);
-      
+  
   };
 
 })();

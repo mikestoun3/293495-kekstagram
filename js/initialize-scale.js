@@ -25,18 +25,18 @@ window.initializeScale = (function () {
 
     controls.addEventListener('click', function (event) {
       if (event.target === previewSizeDec) {
-         valueScale = decValue(parseInt(controlValue.value, 10), 25);
-          if (valueScale === 25) {
+        valueScale = decValue(parseInt(controlValue.value, 10), 25);
+        if (valueScale === 25) {
             previewSizeDec.disabled = true;
             previewSizeInc.disabled = false;
-      }   else {
-        previewSizeDec.disabled = false;
-        previewSizeInc.disabled = false;
+      } else {
+            previewSizeDec.disabled = false;
+            previewSizeInc.disabled = false;
+          }
       }
-    }
-        
-    if (event.target === previewSizeInc) {
-         valueScale = incValue(parseInt(controlValue.value, 10), 100);
+    
+      if (event.target === previewSizeInc) {
+      valueScale = incValue(parseInt(controlValue.value, 10), 100);
       if (valueScale === 100) {
         previewSizeInc.disabled = true;
         previewSizeDec.disabled = false;
@@ -47,7 +47,7 @@ window.initializeScale = (function () {
     }
       if (typeof callback === 'function') {
         callback(valueScale);
-       
+   
       }
     }, false);
   };
