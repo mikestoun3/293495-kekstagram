@@ -46,9 +46,10 @@ window.initializeScale = (function () {
       controlValue.value = value + '%';
     });
   };
-
-  var initializeScale = document.querySelector('.upload-resize-controls');
+  var preview = document.querySelector('.filter-image-preview');
+  var value = decValue(parseInt(controlValue.value, 10), 25);
   var scaleTransform = function (scale) {
     preview.style.transform = 'scale(' + value / 100 + ')';
-  }
+  };
+  scaleTransform();
 });
