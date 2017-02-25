@@ -31,8 +31,6 @@ window.initializeFilters = (function () {
       }
     }, false);
 
-    
-
-  };
+};
 
 })();

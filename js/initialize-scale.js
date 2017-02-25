@@ -7,8 +7,6 @@ window.initializeScale = (function () {
 
   return function (controlValue, valueScale, step, callback) {
 
-    
-
     var incValue = function (valueControl, max) {
       if (valueControl < max) {
         return (valueControl + step);
