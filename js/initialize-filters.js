@@ -3,7 +3,8 @@
 window.initializeFilters = (function () {
   var preview = document.querySelector('.filter-image-preview');
   var uploadFilterControls = document.querySelector('.upload-filter-controls');
-
+  var ENTER_KEY_CODE = 13;
+  
   return function () {
 
     uploadFilterControls.addEventListener('click', function () {

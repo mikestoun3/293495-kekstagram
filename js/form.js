@@ -5,7 +5,6 @@ var uploadFile = uploadButton.querySelector('#upload-file');
 var Overlay = document.querySelector('.upload-overlay');
 var uploadFormCancel = document.querySelector('.upload-form-cancel');
 
-var ENTER_KEY_CODE = 13;
 var ESCAPE_KEY_CODE = 27;
 
 var toggleAriaHidden = function (element) {
