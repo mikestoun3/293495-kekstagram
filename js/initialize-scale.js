@@ -6,22 +6,6 @@ window.initializeScale = (function () {
 
 
   return function (controlValue, valueScale, step) {
-    var decValue = function (valueControl, min, n) {
-      if (valueControl > min) {
-        return (valueControl - n);
-      } else {
-        return valueControl;
-      }
-    };
-
-    var incValue = function (valueControl, max, n) {
-      if (valueControl < max) {
-        return (valueControl + n);
-      } else {
-        return valueControl;
-      }
-    };
-
     previewSizeDec.addEventListener('click', function () {
       var value = decValue(parseInt(controlValue.value, 10), 25, 25);
       if (value === 25) {
@@ -46,6 +30,21 @@ window.initializeScale = (function () {
       controlValue.value = value + '%';
     });
   };
+  var decValue = function (valueControl, min, n) {
+    if (valueControl > min) {
+      return (valueControl - n);
+    } else {
+      return valueControl;
+    }
+  };
+  var incValue = function (valueControl, max, n) {
+    if (valueControl < max) {
+      return (valueControl + n);
+    } else {
+      return valueControl;
+    }
+  };
+  var controlValue.value = value + '%';
   var preview = window.querySelector('.filter-image-preview');
   var value = decValue(parseInt(controlValue.value, 10), 25);
   var scaleTransform = function (scale) {
