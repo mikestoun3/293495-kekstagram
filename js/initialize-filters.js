@@ -2,7 +2,7 @@
 
 window.initializeFilters = (function () {
   var preview = document.querySelector('.filter-image-preview');
-  var uploadFilterControls = do cument.querySelector('.upload-filter-controls');
+  var uploadFilterControls = document.querySelector('.upload-filter-controls');
 
   return function () {
 
