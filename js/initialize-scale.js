@@ -52,4 +52,3 @@ window.initializeScale = (function () {
     preview.style.transform = 'scale(' + value / 100 + ')';
   }
 });
-();

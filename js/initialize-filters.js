@@ -40,9 +40,9 @@ window.initializeFilters = (function () {
   };
 })();
 
-
+var input = document.getElementById(labelFor);
 var filterApply = function (preview) {
   preview.className = 'filter-image-preview';
   preview.classList.add('filter-' + input.value);
-}
+};
 filterApply();
