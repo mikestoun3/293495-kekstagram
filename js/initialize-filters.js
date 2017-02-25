@@ -38,7 +38,7 @@ window.initializeFilters = (function () {
     }, true);
   };
 })();
-var uploadFilterControls = document.querySelector('.upload-filter-controls');
+
 var preview = document.querySelector('.filter-image-preview');
 var filterApply = function (preview) {
   preview.className = 'filter-image-preview';

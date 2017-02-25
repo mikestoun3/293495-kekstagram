@@ -45,5 +45,11 @@ uploadFormCancel.addEventListener('click', function () {
   closeUploadOverlayElement();
 });
 
+var uploadFilterControls = document.querySelector('.upload-filter-controls');
+var scaleElement = document.querySelector('.upload-resize-controls');
+var SCALE_STEP = 25;
+var INITIAL_SCALE = 100;
 window.initializeScale(scaleElement, SCALE_STEP, INITIAL_SCALE, scaleTransform);
-window.filterApply(uploadFilterControls, filterApply);
+window.initializeFilters(uploadFilterControls, filterApply);
+
+

@@ -3,7 +3,7 @@
 window.initializeScale = (function () {
   var previewSizeDec = document.querySelector('.upload-resize-controls-button-dec');
   var previewSizeIn = document.querySelector('.upload-resize-controls-button-inc');
-  var preview = document.querySelector('.filter-image-preview');
+
 
   return function (controlValue, valueScale, step) {
     var decValue = function (valueControl, min, n) {
@@ -46,10 +46,10 @@ window.initializeScale = (function () {
       controlValue.value = value + '%';
     });
   };
-  var SCALE_STEP = 25;
-  var INITIAL_SCALE = 100;
+
   var initializeScale = document.querySelector('.upload-resize-controls');
   var scaleTransform = function (scale) {
     preview.style.transform = 'scale(' + value / 100 + ')';
   }
-})();
+});
+();
