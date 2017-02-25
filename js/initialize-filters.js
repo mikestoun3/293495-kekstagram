@@ -3,7 +3,7 @@
 window.initializeFilters = (function () {
   var ENTER_KEY_CODE = 13;
   return function () {
-
+    var uploadFilterControls = document.querySelector('.upload-filter-controls');
     uploadFilterControls.addEventListener('click', function () {
       var target = event.target;
       if (target.tagName.toLowerCase() !== 'input') {
@@ -39,8 +39,8 @@ window.initializeFilters = (function () {
   };
 })();
 
-var preview = document.querySelector('.filter-image-preview');
+
 var filterApply = function (preview) {
   preview.className = 'filter-image-preview';
   preview.classList.add('filter-' + input.value);
-}
+};
