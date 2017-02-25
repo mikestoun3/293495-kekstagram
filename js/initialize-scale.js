@@ -30,7 +30,6 @@ window.initializeScale = (function () {
       controlValue.value = value + '%';
     });
   };
-
 });
 var decValue = function (valueControl, min, n) {
   if (valueControl > min) {
@@ -46,10 +45,3 @@ var incValue = function (valueControl, max, n) {
     return valueControl;
   }
 };
-var controlValue = value + '%';
-var preview = window.querySelector('.filter-image-preview');
-var value = decValue(parseInt(controlValue.value, 10), 25);
-var scaleTransform = function (scale) {
-  preview.style.transform = 'scale(' + value / 100 + ')';
-};
-window.scaleTransform();

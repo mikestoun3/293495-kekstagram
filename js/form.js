@@ -45,6 +45,22 @@ uploadFormCancel.addEventListener('click', function () {
   closeUploadOverlayElement();
 });
 
+var scaleTransform = function (scale) {
+  preview.style.transform = 'scale(' + value / 100 + ')';
+};
+var controlValue = value + '%';
+var preview = window.querySelector('.filter-image-preview');
+var value = decValue(parseInt(controlValue.value, 10), 25);
+var scaleTransform = function (scale) {
+  preview.style.transform = 'scale(' + value / 100 + ')';
+};
+var labelFor = event.target.getAttribute('for');
+var input = document.getElementById(labelFor);
+var filterApply = function (preview) {
+  preview.className = 'filter-image-preview';
+  preview.classList.add('filter-' + input.value);
+};
+
 var uploadFilterControls = document.querySelector('.upload-filter-controls');
 var scaleElement = document.querySelector('.upload-resize-controls');
 var SCALE_STEP = 25;
