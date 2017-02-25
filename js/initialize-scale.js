@@ -46,10 +46,10 @@ window.initializeScale = (function () {
       controlValue.value = value + '%';
     });
   };
-  var preview = document.querySelector('.filter-image-preview');
+  var preview = window.querySelector('.filter-image-preview');
   var value = decValue(parseInt(controlValue.value, 10), 25);
   var scaleTransform = function (scale) {
     preview.style.transform = 'scale(' + value / 100 + ')';
   };
-  scaleTransform();
+  window.scaleTransform();
 });
