@@ -6,7 +6,7 @@ window.initializeScale = (function () {
   var preview = document.querySelector('.filter-image-preview');
 
   return function (controlValue, valueScale, step) {
-var decValue = function (valueControl, min, n) {
+    var decValue = function (valueControl, min, n) {
   if (valueControl > min) {
     return (valueControl - n);
   } else {
@@ -14,7 +14,7 @@ var decValue = function (valueControl, min, n) {
   }
 };
 
-var incValue = function (valueControl, max, n) {
+    var incValue = function (valueControl, max, n) {
   if (valueControl < max) {
     return (valueControl + n);
   } else {
@@ -22,7 +22,7 @@ var incValue = function (valueControl, max, n) {
   }
 };
 
-previewSizeDec.addEventListener('click', function () {
+    previewSizeDec.addEventListener('click', function () {
   var value = decValue(parseInt(controlValue.value, 10), 25, 25);
   if (value === 25) {
     previewSizeDec.disabled = true;
@@ -35,7 +35,7 @@ previewSizeDec.addEventListener('click', function () {
   preview.style.transform = 'scale(' + value / 100 + ')';
 });
 
-previewSizeIn.addEventListener('click', function () {
+    previewSizeIn.addEventListener('click', function () {
   var value = incValue(parseInt(controlValue.value, 10), 100, 25);
   if (value === 100) {
     previewSizeIn.disabled = true;

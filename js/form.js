@@ -34,22 +34,6 @@ var closeUploadOverlayElement = function () {
   document.removeEventListener('keydown', setupKeydownHandler);
 };
 
-var toggleFilterAriaPressed = function () {
-  var inputs = document.getElementsByName('upload-filter');
-  for (var i = 0; i < inputs.length; i++) {
-    inputs[i].setAttribute('aria-pressed', inputs[i].checked);
-  }
-};
-
-
-var toggleAriaHidden = function (element) {
-  if (element.getAttribute('aria-hidden') === 'true') {
-    element.setAttribute('aria-hidden', false);
-  } else {
-    element.setAttribute('aria-hidden', true);
-  }
-};
-
 uploadFile.addEventListener('change', function () {
   showUploadOverlayElement();
 });
@@ -57,6 +41,3 @@ uploadFile.addEventListener('change', function () {
 uploadFormCancel.addEventListener('click', function () {
   closeUploadOverlayElement();
 });
-
-
-
