@@ -8,29 +8,29 @@ window.initializeScale = (function () {
   return function (controlValue, valueScale, step) {
     var decValue = function (valueControl, min, n) {
       if (valueControl > min) {
-    return (valueControl - n);
-  } else {
-    return valueControl;
-  }
+        return (valueControl - n);
+      } else {
+        return valueControl;
+      }
     };
 
     var incValue = function (valueControl, max, n) {
       if (valueControl < max) {
-    return (valueControl + n);
-  } else {
-    return valueControl;
-  }
+        return (valueControl + n);
+      } else {
+        return valueControl;
+      }
     };
 
     previewSizeDec.addEventListener('click', function () {
-  var value = decValue(parseInt(controlValue.value, 10), 25, 25);
+      var value = decValue(parseInt(controlValue.value, 10), 25, 25);
       if (value === 25) {
-    previewSizeDec.disabled = true;
-    previewSizeIn.disabled = false;
-  } else {
-    previewSizeDec.disabled = false;
-    previewSizeIn.disabled = false;
-  }
+        previewSizeDec.disabled = true;
+        previewSizeIn.disabled = false;
+      } else {
+        previewSizeDec.disabled = false;
+        previewSizeIn.disabled = false;
+      }
       controlValue.value = value + '%';
       preview.style.transform = 'scale(' + value / 100 + ')';
     });
@@ -38,12 +38,12 @@ window.initializeScale = (function () {
     previewSizeIn.addEventListener('click', function () {
       var value = incValue(parseInt(controlValue.value, 10), 100, 25);
       if (value === 100) {
-    previewSizeIn.disabled = true;
-    previewSizeDec.disabled = false;
-  } else {
-    previewSizeDec.disabled = false;
-    previewSizeIn.disabled = false;
-  }
+        previewSizeIn.disabled = true;
+        previewSizeDec.disabled = false;
+      } else {
+        previewSizeDec.disabled = false;
+        previewSizeIn.disabled = false;
+      }
       controlValue.value = value + '%';
       preview.style.transform = 'scale(' + value / 100 + ')';
     });

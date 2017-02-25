@@ -8,8 +8,12 @@ var uploadFormCancel = document.querySelector('.upload-form-cancel');
 var ENTER_KEY_CODE = 13;
 var ESCAPE_KEY_CODE = 27;
 
-var isActivateEvent = function (evt) {
-  return evt.keyCode === ENTER_KEY_CODE;
+var toggleAriaHidden = function (element) {
+  if (element.getAttribute('aria-hidden') === 'true') {
+    element.setAttribute('aria-hidden', false);
+  } else {
+    element.setAttribute('aria-hidden', true);
+  }
 };
 
 var setupKeydownHandler = function (evt) {
