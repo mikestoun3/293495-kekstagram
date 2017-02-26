@@ -7,12 +7,12 @@ window.load('https://intensive-javascript-server-myophkugvq.now.sh/kekstagram/da
       var pictureFrame = templateElement.content.querySelector('.picture');
       var pictureFilters = document.querySelector('.filters');
       var pictureArrCommented = pictures.slice(0);
-  
+
       var sortFunc = function (array) {
-         array.sort(function (left, right) {
-          return right.comments.length - left.comments.length;
-        });
-       };
+        array.sort(function (left, right) {
+           return right.comments.length - left.comments.length;
+         });
+      };
 
       function getRandomArrFromArr(arr, n) {
         var randomArr = new Array(n);
