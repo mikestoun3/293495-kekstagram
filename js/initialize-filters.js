@@ -11,15 +11,15 @@ window.initializeFilters = (function () {
           var input = document.getElementById(labelFor);
           input.checked = true;
           window.utils.toggleFilterAriaPressed();
+            if (typeof callback === 'function') {
+              callback(input.value);
+          }
         }
-      }
-      if (typeof callback === 'function') {
-        callback(input.value);
       }
     }, true);
 
-    uploadFilterControls.addEventListener('click', function (evt) {
-      var target = evt.target;
+    uploadFilterControls.addEventListener('click', function (event) {
+      var target = event.target;
       if (target.tagName.toLowerCase() !== 'input') {
         return;
       }
