@@ -56,7 +56,7 @@ window.utils = (function () {
         callback();
       }
     },
-    
+
     setDefaultValue: function (defaultValue) {
       preview.className = 'filter-image-preview';
       preview.classList.add('filter-' + defaultFilter.value);
