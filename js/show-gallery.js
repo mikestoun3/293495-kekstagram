@@ -12,7 +12,7 @@ window.showGallery = (function () {
     galleryOverlayClose.addEventListener('click', function () {
       galleryOverlay.classList.add('invisible');
     });
-    document.addEventListener('keydown', function (evt) {
+    galleryOverlay.addEventListener('keydown', function (evt) {
       if (window.utils.isDeactivationEvent(evt)) {
         galleryOverlay.classList.add('invisible');
       }
