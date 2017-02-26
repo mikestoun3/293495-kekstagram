@@ -72,13 +72,13 @@ window.utils = (function () {
     closeUploadOverlayElement: closeUploadOverlayElement,
 
     adjustScale: function (value) {
-        controlValue.value = value + '%';
-        preview.style.transform = 'scale(' + value / 100 + ')';
+      controlValue.value = value + '%';
+      preview.style.transform = 'scale(' + value / 100 + ')';
     },
 
     applyFilter: function (newFilter) {
-        preview.className = 'filter-image-preview';
-        preview.classList.add('filter-' + newFilter);
+      preview.className = 'filter-image-preview';
+      preview.classList.add('filter-' + newFilter);
     }
 
   };
