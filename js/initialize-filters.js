@@ -11,9 +11,9 @@ window.initializeFilters = (function () {
           var input = document.getElementById(labelFor);
           input.checked = true;
           window.utils.toggleFilterAriaPressed();
-            if (typeof callback === 'function') {
+          if (typeof callback === 'function') {
               callback(input.value);
-          }
+            }
         }
       }
     }, true);
