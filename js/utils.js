@@ -52,12 +52,13 @@ window.utils = (function () {
       return evt.keyCode === ENTER_KEY_CODE;
     },
 
-    showUploadOverlayElement: function (callback) {
+      showUploadOverlayElement: function (callback) {
       overlay.classList.remove('invisible');
       uploadButton.classList.add('invisible');
-      toggleAriaHidden(overlay);
+      toggleAriaHidden(uploadOverlay);
+
       document.addEventListener('keydown', setupKeydownHandler);
-      
+
       if (typeof callback === 'function') {
         callback();
       }
