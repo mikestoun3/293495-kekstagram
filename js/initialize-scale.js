@@ -22,8 +22,8 @@ window.initializeScale = (function () {
       }
     };
 
-    controls.addEventListener('click', function (event) {
-      if (event.target === previewSizeDec) {
+    controls.addEventListener('click', function (evt) {
+      if (evt.target === previewSizeDec) {
         valueScale = decValue(parseInt(controlValue.value, 10), 25);
         if (valueScale === 25) {
           previewSizeDec.disabled = true;
@@ -34,7 +34,7 @@ window.initializeScale = (function () {
         }
       }
 
-      if (event.target === previewSizeInc) {
+      if (evt.target === previewSizeInc) {
         valueScale = incValue(parseInt(controlValue.value, 10), 100);
         if (valueScale === 100) {
           previewSizeInc.disabled = true;
