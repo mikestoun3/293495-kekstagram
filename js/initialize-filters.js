@@ -6,8 +6,8 @@ window.initializeFilters = (function () {
   return function (callback) {
     uploadFilterControls.addEventListener('keydown', function (evt) {
       if (window.utils.isActivateEvent(evt)) {
-        if (event.target.tagName.toLowerCase() === 'label') {
-          var labelFor = event.target.getAttribute('for');
+        if (evt.target.tagName.toLowerCase() === 'label') {
+          var labelFor = evt.target.getAttribute('for');
           var input = document.getElementById(labelFor);
           input.checked = true;
           window.utils.toggleFilterAriaPressed();
@@ -19,7 +19,7 @@ window.initializeFilters = (function () {
     }, true);
 
     uploadFilterControls.addEventListener('click', function () {
-      var target = event.target;
+      var target = evt.target;
       if (target.tagName.toLowerCase() !== 'input') {
         return;
       }
