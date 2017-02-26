@@ -24,7 +24,6 @@ window.initializeScale = (function () {
 
     controls.addEventListener('click', function (event) {
       if (event.target === previewSizeDec) {
-
         valueScale = decValue(parseInt(controlValue.value, 10), 25);
         if (valueScale === 25) {
           previewSizeDec.disabled = true;
