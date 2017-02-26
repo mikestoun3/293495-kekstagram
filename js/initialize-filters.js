@@ -18,7 +18,7 @@ window.initializeFilters = (function () {
       }
     }, true);
 
-    uploadFilterControls.addEventListener('click', function () {
+    uploadFilterControls.addEventListener('click', function (evt) {
       var target = evt.target;
       if (target.tagName.toLowerCase() !== 'input') {
         return;
