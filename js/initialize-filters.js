@@ -12,8 +12,8 @@ window.initializeFilters = (function () {
           input.checked = true;
           window.utils.toggleFilterAriaPressed();
           if (typeof callback === 'function') {
-              callback(input.value);
-            }
+            callback(input.value);
+          }
         }
       }
     }, true);
