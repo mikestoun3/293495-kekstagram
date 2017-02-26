@@ -16,6 +16,7 @@ window.utils = (function () {
       closeUploadOverlayElement();
     }
   };
+
   var closeUploadOverlayElement = function () {
     overlay.classList.add('invisible');
     uploadButton.classList.remove('invisible');
@@ -23,6 +24,7 @@ window.utils = (function () {
 
     document.removeEventListener('keydown', setupKeydownHandler);
   };
+
   var toggleAriaHidden = function (element) {
     if (element.getAttribute('aria-hidden') === 'true') {
       element.setAttribute('aria-hidden', false);
@@ -30,6 +32,7 @@ window.utils = (function () {
       element.setAttribute('aria-hidden', true);
     }
   };
+
   var toggleFilterAriaPressed = function () {
     var inputs = document.getElementsByName('upload-filter');
     for (var i = 0; i < inputs.length; i++) {
@@ -42,6 +45,13 @@ window.utils = (function () {
       return evt.keyCode === ENTER_KEY_CODE;
     },
       
+
+
+  return {
+    isActivateEvent: function (evt) {
+      return evt.keyCode === ENTER_KEY_CODE;
+    },
+
     showUploadOverlayElement: function (callback) {
       overlay.classList.remove('invisible');
       uploadButton.classList.add('invisible');
@@ -52,6 +62,7 @@ window.utils = (function () {
       }
     },
       
+
     setDefaultValue: function (defaultValue) {
       preview.className = 'filter-image-preview';
       preview.classList.add('filter-' + defaultFilter.value);
@@ -61,6 +72,7 @@ window.utils = (function () {
       previewSizeDec.disabled = false;
       previewSizeInc.disabled = true;
     },
+
       
     toggleFilterAriaPressed: toggleFilterAriaPressed,
     closeUploadOverlayElement: closeUploadOverlayElement,
@@ -69,7 +81,7 @@ window.utils = (function () {
       controlValue.value = value + '%';
       preview.style.transform = 'scale(' + value / 100 + ')';
     },
-      
+
     applyFilter: function (newFilter) {
       preview.className = 'filter-image-preview';
       preview.classList.add('filter-' + newFilter);
