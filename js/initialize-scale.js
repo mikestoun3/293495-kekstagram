@@ -13,7 +13,7 @@ window.initializeScale = (function () {
         return valueControl;
       }
     };
-
+      
     var decValue = function (valueControl, min) {
       if (valueControl > min) {
         return (valueControl - step);
@@ -24,7 +24,7 @@ window.initializeScale = (function () {
 
     controls.addEventListener('click', function (event) {
       if (event.target === previewSizeDec) {
-
+          
         valueScale = decValue(parseInt(controlValue.value, 10), 25);
         if (valueScale === 25) {
           previewSizeDec.disabled = true;
