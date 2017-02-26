@@ -1,5 +1,4 @@
 'use strict';
-
 window.load('https://intensive-javascript-server-myophkugvq.now.sh/kekstagram/data',
     function (evt) {
       var pictures = JSON.parse(evt.target.response);
