@@ -23,7 +23,7 @@ window.load('https://intensive-javascript-server-myophkugvq.now.sh/kekstagram/da
           likesCount: pictureItem.likes,
           commentsCount: pictureItem.comments.length
         };
-        picture.addEventListener('click', function (evt) {
+        picture.addEventListener('click', function () {
           evt.preventDefault();
           window.showGallery(pictureBlock);
         });
