@@ -10,8 +10,8 @@ window.load('https://intensive-javascript-server-myophkugvq.now.sh/kekstagram/da
 
       var sortFunc = function (array) {
         array.sort(function (left, right) {
-           return right.comments.length - left.comments.length;
-         });
+          return right.comments.length - left.comments.length;
+        });
       };
 
       function getRandomArrFromArr(arr, n) {
