@@ -57,6 +57,7 @@ window.utils = (function () {
       uploadButton.classList.add('invisible');
       toggleAriaHidden(overlay);
       document.addEventListener('keydown', setupKeydownHandler);
+      
       if (typeof callback === 'function') {
         callback();
       }
