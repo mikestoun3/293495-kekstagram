@@ -39,16 +39,16 @@ window.utils = (function () {
       inputs[i].setAttribute('aria-pressed', inputs[i].checked);
     }
   };
-  
+
   return {
     isActivateEvent: function (evt) {
       return evt.keyCode === ENTER_KEY_CODE;
     },
- 
+
     showUploadOverlayElement: function (callback) {
       overlay.classList.remove('invisible');
       uploadButton.classList.add('invisible');
-      toggleAriaHidden(uploadOverlay);
+      toggleAriaHidden(overlay);
 
       document.addEventListener('keydown', setupKeydownHandler);
 
@@ -56,7 +56,7 @@ window.utils = (function () {
         callback();
       }
     },
-      
+
 
     setDefaultValue: function (defaultValue) {
       preview.className = 'filter-image-preview';
@@ -68,18 +68,17 @@ window.utils = (function () {
       previewSizeInc.disabled = true;
     },
 
-      
     toggleFilterAriaPressed: toggleFilterAriaPressed,
     closeUploadOverlayElement: closeUploadOverlayElement,
-    
-      adjustScale: function (value) {
-      controlValue.value = value + '%';
-      preview.style.transform = 'scale(' + value / 100 + ')';
+
+    adjustScale: function (value) {
+        controlValue.value = value + '%';
+        preview.style.transform = 'scale(' + value / 100 + ')';
     },
 
     applyFilter: function (newFilter) {
-      preview.className = 'filter-image-preview';
-      preview.classList.add('filter-' + newFilter);
+        preview.className = 'filter-image-preview';
+        preview.classList.add('filter-' + newFilter);
     }
 
   };
