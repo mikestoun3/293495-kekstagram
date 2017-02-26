@@ -39,20 +39,13 @@ window.utils = (function () {
       inputs[i].setAttribute('aria-pressed', inputs[i].checked);
     }
   };
-  return {
-      
-    isActivateEvent: function (evt) {
-      return evt.keyCode === ENTER_KEY_CODE;
-    },
-      
-
-
+  
   return {
     isActivateEvent: function (evt) {
       return evt.keyCode === ENTER_KEY_CODE;
     },
-
-      showUploadOverlayElement: function (callback) {
+ 
+    showUploadOverlayElement: function (callback) {
       overlay.classList.remove('invisible');
       uploadButton.classList.add('invisible');
       toggleAriaHidden(uploadOverlay);
