@@ -9,17 +9,17 @@ window.initializeScale = (function () {
     var incValue = function (valueControl, max) {
       if (valueControl < max) {
         return (valueControl + step);
-      } else {
-        return valueControl;
-      }
+      } 
+
+      return valueControl;
     };
 
     var decValue = function (valueControl, min) {
       if (valueControl > min) {
         return (valueControl - step);
-      } else {
-        return valueControl;
       }
+        
+      return valueControl;
     };
 
     controls.addEventListener('click', function (evt) {
@@ -46,7 +46,6 @@ window.initializeScale = (function () {
       }
       if (typeof callback === 'function') {
         callback(valueScale);
-
       }
     }, false);
   };
