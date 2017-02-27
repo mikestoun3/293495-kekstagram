@@ -9,7 +9,7 @@ window.initializeScale = (function () {
     var incValue = function (valueControl, max) {
       if (valueControl < max) {
         return (valueControl + step);
-      } 
+      }
 
       return valueControl;
     };
@@ -18,7 +18,7 @@ window.initializeScale = (function () {
       if (valueControl > min) {
         return (valueControl - step);
       }
-        
+
       return valueControl;
     };
 
